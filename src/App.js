@@ -1,23 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
-
+import "./App.scss";
+import Header from "./components/Header/Header";
+import Silderleft from "./components/SliderLeft/Silderleft";
+import { Outlet } from "react-router-dom";
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <Header />
       </header>
+
+      <div className="content-container">
+        <div className="silde-left">
+          <Silderleft />
+        </div>
+        <div className="content ">
+          <div className="movie-container bg-[#1d3042]">
+            <Outlet />
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

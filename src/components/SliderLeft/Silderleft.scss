@@ -1,0 +1,79 @@
+.left-content {
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  top: 88px;
+  left: 60px;
+  width: 240px; // Đặt chiều rộng phù hợp cho .left-content
+  height: calc(
+    100vh - 88px
+  ); // Chiều cao toàn màn hình trừ đi chiều cao của header
+  overflow-y: auto; // Kích hoạt thanh cuộn dọc nếu nội dung vượt quá chiều cao
+
+  .all {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      padding: 10px 20px; // Thêm padding để tăng khoảng cách giữa các mục
+      margin-bottom: 15px; // Thêm margin-bottom để tăng khoảng cách giữa các mục
+      color: #babac1;
+      line-height: 25.6px;
+      font-size: 16px;
+      &:hover {
+        background-color: #c54242;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+        display: flex; // Sử dụng flexbox để căn giữa icon và text
+        align-items: center; // Căn giữa theo chiều dọc
+        .icon-silde {
+          margin-right: 10px;
+          width: 24px; // Đặt kích thước cố định cho các icon
+          height: 24px; // Đặt kích thước cố định cho các icon
+        }
+      }
+    }
+
+    .toggle-category {
+      cursor: pointer;
+    }
+
+    .link_contry {
+      border-top: 1px solid;
+      .h5 {
+        font-size: 15px;
+        font-weight: 700;
+        color: #fff;
+        margin-top: 15px;
+        margin-left: 10px;
+      }
+    }
+
+    .category {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column; // Đảm bảo các mục category xếp theo chiều dọc
+      padding-left: 20px;
+
+      ul {
+        padding: 0;
+        margin: 0;
+        list-style: disc;
+
+        li {
+          cursor: pointer;
+          padding: 10px 20px;
+          &::marker {
+            color: #c54242;
+          }
+        }
+      }
+    }
+  }
+}
