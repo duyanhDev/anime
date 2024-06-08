@@ -1,0 +1,39 @@
+.play {
+  border: 6px solid rgba(255, 255, 255, 0.5490196078);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  transition: 0.1s linear;
+  transform-origin: center center;
+  opacity: 0;
+  color: #fff;
+  margin-top: 110px;
+
+  margin-left: 54px;
+}
+.p-2 {
+  &:hover .play {
+    opacity: 1;
+  }
+}
+
+.main-item__link {
+  color: #fff;
+  text-decoration: none;
+  padding-top: 6px;
+  display: block;
+  font-size: 16px;
+  transition: 0.2s linear;
+  line-height: 22px;
+  max-height: 55px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}

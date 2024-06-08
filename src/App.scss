@@ -28,10 +28,14 @@ body {
 }
 .content {
   width: 80%;
+  right: 0;
+  position: fixed;
+  height: calc(100vh - 88px);
+  overflow-y: scroll;
   .movie-container {
     width: 87%;
     margin-top: 0 20px;
     border-radius: 20px;
-    min-height: 100vh;
+    min-height: 500vh;
   }
 }

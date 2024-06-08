@@ -9,6 +9,21 @@
     padding: 10px 20px;
   }
 }
+.title {
+  position: relative;
+  top: 46px;
+  display: flex;
+  justify-content: space-between;
+  /* width: 501px; */
+  width: 70%;
+  flex-wrap: wrap;
+  left: 38px;
+  align-items: center;
+
+  span {
+    cursor: pointer;
+  }
+}
 .swiper-home {
   width: 70%;
   position: relative;
@@ -40,5 +55,116 @@
     height: 100%;
     object-fit: cover;
   }
- 
+}
+.content-anime {
+  width: 82%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  justify-content: center;
+  margin-top: 50px;
+  align-items: center;
+  margin-left: 26px;
+
+  .movie {
+    position: relative;
+    &:hover .play {
+      opacity: 1;
+    }
+    .play {
+      border: 6px solid #ffffff8c;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      top: 86px;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: #fff;
+      transition: 0.1s linear;
+      transform-origin: center center;
+      opacity: 0;
+    }
+    span.name-movie {
+      position: absolute;
+      color: #fff;
+      bottom: 0;
+      text-align: center;
+    }
+  }
+}
+.update {
+  position: relative;
+  top: 90px;
+  display: flex;
+  justify-content: space-between;
+  /* width: 501px; */
+  width: 70%;
+  flex-wrap: wrap;
+  left: 40px;
+  align-items: center;
+
+  span {
+    cursor: pointer;
+  }
+}
+.title-1 {
+  position: relative;
+  top: 25px;
+  display: flex;
+  justify-content: space-between;
+  /* width: 501px; */
+  width: 70%;
+  flex-wrap: wrap;
+  left: 38px;
+  align-items: center;
+}
+.content-update {
+  width: 68%;
+  margin-left: 53px;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 45px;
+  gap: 8px;
+}
+img.fff {
+  width: 140px;
+  height: 210px;
+}
+.title-2 {
+  position: relative;
+  top: 25px;
+  display: flex;
+  justify-content: space-between;
+  /* width: 501px; */
+  width: 70%;
+  flex-wrap: wrap;
+  left: 38px;
+  align-items: center;
+}
+.content-phimbo {
+  width: 70%;
+  position: relative;
+  left: 40px;
+  top: 50px;
+}
+@media (max-width: 768px) {
+  .grid-cols-5 {
+    grid-template-columns: repeat(
+      3,
+      minmax(0, 1fr)
+    ); /* Thay đổi số cột thành 3 khi màn hình nhỏ hơn 768px */
+  }
+}
+@media (max-width: 480px) {
+  .grid-cols-5 {
+    grid-template-columns: repeat(
+      2,
+      minmax(0, 1fr)
+    ); /* Thay đổi số cột thành 2 khi màn hình nhỏ hơn 480px */
+  }
 }
