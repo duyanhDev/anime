@@ -15,7 +15,6 @@ const SeriesMovie = (props) => {
 
   const FetchApiUpdate = async () => {
     let res = await getSeriesMovie(currentPage);
-    console.log("phim bo", res.data.data);
     if (res && res.data && res.data.data && res.data.data.items) {
       const endOffset = itemOffset + itemsPerPage;
       setNewData(res.data.data.items.slice(itemOffset, endOffset));
@@ -28,7 +27,7 @@ const SeriesMovie = (props) => {
 
     setCurrentPage(event.selected);
   };
-  console.log("dataa", data);
+
   return (
     <>
       <div className="grid grid-cols-5 gap-4">

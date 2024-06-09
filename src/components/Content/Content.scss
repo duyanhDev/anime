@@ -1,0 +1,47 @@
+.item-category {
+  .item-category__title {
+    li {
+      cursor: pointer;
+    }
+    li + li {
+      &::before {
+        padding: 0 0 0 10px;
+        color: #bbb;
+        content: "/\00a0";
+      }
+    }
+  }
+}
+.detail-imgae {
+  .details__card-img {
+    max-width: 100%;
+    border-radius: 6px;
+    border: 3px solid #fff305;
+    height: 350px;
+    object-fit: fill;
+    width: 100%;
+  }
+  .detail-btn {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+
+    button {
+      border-radius: 5px;
+    }
+  }
+}
+.detail-category {
+  li {
+    color: #fff;
+    padding: 5px 0px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+  }
+  .episode {
+    cursor: pointer;
+    background-color: #952929;
+    border-radius: 5px;
+  }
+}
