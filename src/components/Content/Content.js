@@ -12,7 +12,7 @@ const Content = () => {
   useEffect(() => {
     const fetchApiLiveMovie = async () => {
       const res = await getLiveMovie(params.slug);
-      // console.log(res);
+      console.log(res);
       if (res && res.data && res.data.movie) {
         setData(res.data.movie);
       }
@@ -46,12 +46,16 @@ const Content = () => {
     return item.server_data;
   });
 
-  const handleClikMovie = (item) => {
-    Navigate(item.link_embed);
-  };
+  const link = episodes.map((item) => {
+    return item.server_data.map((link, index) => {
+      return link.link_embed;
+    });
+  });
+
+  console.log(link);
   return (
     <>
-      <div className="w-3/4 absolute mt-4 ml-4 item-category">
+      <div className=" w-3/4 absolute mt-4 ml-4 item-category md:max-w-2xl ml-8">
         <ul className="flex flex-wrap gap-4 item-category__title">
           <li className="text-[#eee] font-serif font-medium text-xl">
             Trang chủ
@@ -77,7 +81,11 @@ const Content = () => {
             className="details__card-img lazy w-full object-cover"
           />
           <div className="detail-btn gap-3">
-            <button className="bg-[#952929] p-2 text-[#fff]">Xem Phim</button>
+            <button className="bg-[#952929] p-2 text-[#fff]">
+              <Link to={link.join(",")} target="_blank">
+                Xem phim
+              </Link>
+            </button>
             <button className="bg-[#1a4672] p-2 text-[#fff]">Lưu video</button>
           </div>
         </div>
@@ -109,9 +117,10 @@ const Content = () => {
             <li>
               Tập Phim:
               {episodes_Curent.map((item) => {
-                return item.map((item) => {
+                return item.map((item, index) => {
                   return (
                     <span
+                      key={index}
                       className="episode"
                       // onClick={() => handleClikMovie(item)}
                     >

@@ -13,8 +13,8 @@ function App() {
         <div className="silde-left">
           <Silderleft />
         </div>
-        <div className="content ">
-          <div className="movie-container bg-[#1d3042]">
+        <div className="mobile:w-full pc:w-3/4 content  ">
+          <div className="mobile:w-full movie-container bg-[#1d3042]  ">
             <Outlet />
           </div>
         </div>

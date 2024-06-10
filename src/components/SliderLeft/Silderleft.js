@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import "./Silderleft.scss";
 import {
   FaHome,
@@ -11,10 +11,14 @@ import {
 } from "react-icons/fa";
 import { FaList } from "react-icons/fa6";
 import { RiMovieFill } from "react-icons/ri";
+import { getMovieOdd } from "../../Apiserver/Apiserver";
 
 const Silderleft = () => {
   const [showCategory, setShowCategory] = useState(false);
   const [ShowYear, setYear] = useState(false);
+  const [listRandom, setListRandom] = useState([]);
+  const [randomSlug, setRandomSlug] = useState(null);
+  const Navigate = useNavigate();
   const toggleCategory = () => {
     setShowCategory(!showCategory);
     setYear(false);
@@ -24,8 +28,30 @@ const Silderleft = () => {
     setShowCategory(false);
   };
 
+  useEffect(() => {
+    const fetchRandom = async () => {
+      let res = await getMovieOdd();
+      if (res && res.data && res.data.data && res.data.data.items) {
+        const slugs = res.data.data.items.map((movie) => movie.slug);
+        setListRandom(slugs);
+        const randomIndex = Math.floor(Math.random() * slugs.length);
+        setRandomSlug(slugs[randomIndex]);
+      }
+    };
+
+    fetchRandom();
+  }, []);
+
+  if (!randomSlug) {
+    return null;
+  }
+
+  const handleRandom = () => {
+    console.log("xx");
+    Navigate(`phim/${randomSlug}`);
+  };
   return (
-    <div className="left-content">
+    <div className="left-content md:ml-0">
       <ul className="all">
         <h3 className="text-center font-bold text-[#fff]">MENU</h3>
         <li className="bg-red-700 text-center">
@@ -34,10 +60,13 @@ const Silderleft = () => {
           </Link>
         </li>
         <li>
-          <Link>
+          <span
+            onClick={() => handleRandom()}
+            className="flex items-center gap-2 cursor-pointer"
+          >
             <FaPlay className="text-xl scroll icon-silde" />
             Xem Ngẫu Nhiên
-          </Link>
+          </span>
         </li>
         <li>
           <Link>

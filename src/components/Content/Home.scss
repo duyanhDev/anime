@@ -68,6 +68,9 @@
 
   .movie {
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     &:hover .play {
       opacity: 1;
     }
@@ -152,12 +155,25 @@ img.fff {
   left: 40px;
   top: 50px;
 }
-@media (max-width: 768px) {
+@media (max-width: 639px) {
   .grid-cols-5 {
     grid-template-columns: repeat(
       3,
       minmax(0, 1fr)
     ); /* Thay đổi số cột thành 3 khi màn hình nhỏ hơn 768px */
+  }
+  .title-1 {
+    width: 88%;
+    left: 4%;
+  }
+  .mobile\:w-full {
+    width: 100%;
+    margin-left: 11px;
+  }
+  .justify-center {
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-left: -8px;
   }
 }
 @media (max-width: 480px) {

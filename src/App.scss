@@ -39,3 +39,11 @@ body {
     min-height: 500vh;
   }
 }
+@media (max-width: 639px) {
+  .mobile\:w-full {
+    width: 100%;
+    .movie-container {
+      width: 100%;
+    }
+  }
+}

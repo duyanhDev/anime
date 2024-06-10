@@ -1,11 +1,33 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import "./Header.scss";
 import { CiSearch } from "react-icons/ci";
 import { IoLogOutOutline } from "react-icons/io5";
 import Tippy from "@tippyjs/react/headless";
 import "tippy.js/dist/tippy.css";
 import image11 from "../../assets/img/11.jpg";
-const Header = () => {
+import { useEffect, useState } from "react";
+
+const Header = (props) => {
+  const Navigate = useNavigate();
+  let location = useLocation();
+  const [name, setName] = useState("");
+
+  useEffect(() => {
+    if (location.state && location.state.user) {
+      location.state.user.forEach((item) => {
+        setName(item.username);
+      });
+    }
+  }, [location.state]);
+
+  const handleLogout = () => {
+    Navigate("/login");
+    setName("");
+    if (location.state) {
+      location.state.user = []; // Reset the user state
+    }
+  };
+  console.log(name);
   return (
     <div className="container-header flex justify-between items-center mx-2">
       <div className="header-title">
@@ -134,7 +156,15 @@ const Header = () => {
           {" "}
           <IoLogOutOutline />
         </span>
-        <p className="text-[#333] ">Đăng Nhập</p>
+        {name && name.length > 0 ? (
+          <p className="text-[#333]" onClick={() => handleLogout()}>
+            {name}
+          </p>
+        ) : (
+          <p className="text-[#333]" onClick={() => Navigate("/login")}>
+            Đăng Nhập
+          </p>
+        )}
       </div>
     </div>
   );

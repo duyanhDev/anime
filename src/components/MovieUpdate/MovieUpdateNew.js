@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { getMovieUpdate } from "../../Apiserver/Apiserver";
 import { FaPlay } from "react-icons/fa";
 import "./MovieUpdate.scss";
-const MovieUpdateNew = (prop) => {
+const MovieUpdateNew = (props) => {
   const [data, setNewData] = useState([]);
   const itemsPerPage = 10;
   const [currentPage, setCurrentPage] = useState(0);
@@ -16,7 +16,6 @@ const MovieUpdateNew = (prop) => {
 
   const FetchApiUpdate = async () => {
     let res = await getMovieUpdate(currentPage);
-    console.log(res);
     if (res && res.data && res.data.items) {
       const endOffset = itemOffset + itemsPerPage;
       setNewData(res.data.items.slice(itemOffset, endOffset));
@@ -37,7 +36,10 @@ const MovieUpdateNew = (prop) => {
           data.length > 0 &&
           data.map((item, index) => (
             <div key={index} className="p-2">
-              <span className="play" onClick={() => prop.handleCickMovie(item)}>
+              <span
+                className="play"
+                onClick={() => props.handleCickMovie(item)}
+              >
                 <FaPlay />
               </span>
               <img

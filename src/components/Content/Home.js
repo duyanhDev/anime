@@ -21,6 +21,7 @@ import { useNavigate } from "react-router-dom";
 import SeriesMovie from "../SeriesMovie/SeriesMovie";
 const Home = () => {
   const navigate = useNavigate();
+
   const [Movie, setMovie] = useState([]);
   const handleCickMovie = (item) => {
     navigate(`phim/${item.slug}`);
@@ -128,7 +129,7 @@ const Home = () => {
                   <div key={idx} className="movie">
                     <img
                       src={`https://img.phimapi.com/${movie.thumb_url}`}
-                      className="w-32 h-44"
+                      className="mobile:w-full w-32 h-44"
                       alt={`slide-${index}-img-${idx}`}
                     />
                     <span
@@ -153,7 +154,7 @@ const Home = () => {
         <span className="text-[#f0e2e2] font-bold text-xl">XEM THÊM</span>
       </div>
 
-      <div className="content-update">
+      <div className="mobile:w-full  content-update">
         <MovieUpdateNew handleCickMovie={handleCickMovie} />
       </div>
       <div className="title-2 absolute">
