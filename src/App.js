@@ -55,7 +55,7 @@ function App() {
 
       <div className="content-container">
         <div className="silde-left" ref={HomeBtn}>
-          {screenSize.width >= 390 && screenSize.width <= 840 ? (
+          {screenSize.width >= 370 && screenSize.width <= 840 ? (
             show && <Silderleft />
           ) : (
             <Silderleft />
@@ -68,7 +68,7 @@ function App() {
         </div>
       </div>
 
-      {screenSize.width >= 390 && screenSize.width <= 840 && (
+      {screenSize.width >= 370 && screenSize.width <= 840 && (
         <div className="slider-bottom">
           <FaHome className="text-xl text-[#fff]" />
           <FaBars

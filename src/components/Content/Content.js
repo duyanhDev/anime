@@ -55,7 +55,7 @@ const Content = () => {
   console.log(link);
   return (
     <>
-      <div className=" w-3/4 absolute mt-4 ml-4 item-category md:max-w-2xl ml-8">
+      <div className=" w-3/4 absolute mt-4 ml-4 item-category md:max-w-2xl">
         <ul className="flex flex-wrap gap-4 item-category__title">
           <li className="text-[#eee] font-serif font-medium text-xl">
             Trang chủ

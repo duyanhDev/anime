@@ -179,7 +179,7 @@ const Header = (props) => {
               className="text-[#333]"
               style={{
                 display:
-                  screenSize.width <= 390 && screenSize.height === 844
+                  screenSize.width >= 375 && screenSize.width <= 850
                     ? "none"
                     : "block",
               }}
