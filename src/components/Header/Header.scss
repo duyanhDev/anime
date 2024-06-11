@@ -69,3 +69,24 @@
     }
   }
 }
+
+@media (max-width: 639px) {
+  .container-header {
+    .header-search {
+      width: 50%;
+      margin-left: 31px;
+    }
+    .header-title {
+      margin-left: 22px;
+    }
+  }
+
+  .input-search {
+    width: 100%;
+  }
+  .icon-search {
+    svg {
+      margin-left: 57px;
+    }
+  }
+}
